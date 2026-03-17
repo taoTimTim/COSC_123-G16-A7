@@ -34,9 +34,9 @@ void A6_Q2(){
 
   a = 1;
   b = 1;
-  m1 = 6;
-  m2 = 6;
-  n1 = 0.3;
+  m1 = 6 + shapeShift;
+  m2 = 6 + shapeShift;
+  n1 = 0.3 + shapeShift * 0.15;
   n2 = 0.3;
   n3 = 0.3;
   supershape(a, b, m1, m2, n1, n2, n3);

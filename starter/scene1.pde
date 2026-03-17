@@ -14,6 +14,7 @@ color next_btn_col;
 int thetaIncrements = 1000;
 float scale = 100.0;
 float a, b, m1, m2, n1, n2, n3;
+float shapeShift = 0;
 
 void scene1() {
   background(0);
@@ -47,9 +48,9 @@ void A6_Q1(){
 
   a = 1;
   b = 1;
-  m1 = 88;
-  m2 = 64;
-  n1 = -20;
+  m1 = 88 + shapeShift;
+  m2 = 64 + shapeShift;
+  n1 = -20 + shapeShift * 0.15;
   n2 = 1;
   n3 = 1;
   supershape(a, b, m1, m2, n1, n2, n3);
@@ -87,13 +88,19 @@ void supershape(float a, float b, float m1, float m2, float n1, float n2, float 
 void keyPressed() {
   if (scn == 1 || scn == 2) {
     if (keyCode == UP) {
-      thetaIncrements *= 2;
+      thetaIncrements += 200;
+      scale += 15;
+      shapeShift += 1;
     }
 
     if (keyCode == DOWN) {
-      thetaIncrements /= 2;
+      thetaIncrements -= 200;
+      scale -= 15;
+      shapeShift -= 1;
     }
 
-    thetaIncrements = constrain(thetaIncrements, 125, 1000);
+    thetaIncrements = constrain(thetaIncrements, 50, 1200);
+    scale = constrain(scale, 50, 180);
+    shapeShift = constrain(shapeShift, -4, 8);
   }
 }
