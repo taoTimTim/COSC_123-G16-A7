@@ -60,12 +60,12 @@ void A6_Q1(){
 void supershape(float a, float b, float m1, float m2, float n1, float n2, float n3) {
   float previousX = 0, previousY = 0;
   float x, y;
-  float hue = 0;
+  float hueSpeed = frameCount * 2; // speed
 
   for (int i = 0; i <= thetaIncrements; i++) {
     float theta = ((2 * PI) / thetaIncrements) * i;
 
-    hue += (255.0 / thetaIncrements);
+    float hue = ( i * 255.0 / thetaIncrements + hueSpeed) % 255;
     stroke(hue, 255, 255);
 
     float r = pow(
