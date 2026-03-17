@@ -3,6 +3,10 @@
 float play_btn_x = 250;
 float play_btn_y = 280;
 color play_btn_col;
+
+float extra_btn_x = 250;
+float extra_btn_y = 330;
+color extra_btn_col;
   
 void scene0(){  //home screen
   //REQ: Write code to draw a welcome message followed by PLAY button. 
@@ -19,6 +23,8 @@ void scene0(){  //home screen
   text("Press the button below", width / 2, 210);
   
   play_btn_col = color(210, 200, 210);
+  extra_btn_col = color(210, 200, 210);
   
   drawButton(play_btn_x, play_btn_y, btn_w, btn_h, play_btn_col, "PLAY");
+  drawButton(extra_btn_x, extra_btn_y, btn_w, btn_h, extra_btn_col, "EXTRA");
 }

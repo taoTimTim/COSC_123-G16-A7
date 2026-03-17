@@ -15,4 +15,7 @@ void draw(){
   else if (scn == 1) {
     scene1();
   }
+  else if (scn == 2) {
+    scene2();
+  }
 }
